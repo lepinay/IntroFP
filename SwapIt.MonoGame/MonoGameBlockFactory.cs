@@ -16,6 +16,7 @@ namespace SwapIt.MonoGame
         public MonoGameBlockFactory(GraphicsDevice GraphicsDevice, ContentManager content)
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //http://opengameart.org/content/puzzle-game-art
             colors = content.Load<Texture2D>("sprites");
         }
         public Block Make(Position position, Color color)

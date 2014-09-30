@@ -24,26 +24,23 @@ namespace SwapIt.MonoGame
         public override void Render()
         {
             Rectangle rect;
-            Microsoft.Xna.Framework.Color color;
+            var size = 14;
             switch (Color)
             {
                 case SwapIt.Domain.Color.Red:
-                    rect = new Rectangle(2, 0, 14, 14);
-                    color = Microsoft.Xna.Framework.Color.Red;
+                    rect = new Rectangle(697, 616, size, size);
                     break;
                 case SwapIt.Domain.Color.Green:
-                    rect = new Rectangle(2, 0, 14, 14);
-                    color = Microsoft.Xna.Framework.Color.Green;
+                    rect = new Rectangle(697, 616, size, size);
                     break;
                 case SwapIt.Domain.Color.Blue:
-                    rect = new Rectangle(2, 0, 14, 14);
-                    color = Microsoft.Xna.Framework.Color.Blue;
+                    rect = new Rectangle(697, 616, size, size);
                     break;
                 default:
                     throw new ArgumentException("Not handled: ", Color.ToString());
             }
             sprite.Begin(SpriteSortMode.Texture,BlendState.Opaque,SamplerState.PointClamp,DepthStencilState.None,RasterizerState.CullNone);
-            sprite.Draw(colors, new Vector2(Position.X * 15, Position.Y * 15), rect, color);
+            sprite.Draw(colors, new Vector2(Position.X * 15, Position.Y * 15), rect, Microsoft.Xna.Framework.Color.White);
             sprite.End();
         }
     }
