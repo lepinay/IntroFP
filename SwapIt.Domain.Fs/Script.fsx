@@ -1,5 +1,6 @@
 ﻿//#r "System.Runtime"
 #r @"C:\Program Files (x86)\MSBuild\..\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll"
+#r "WindowsBase"
 // http://bruinbrown.wordpress.com/2013/10/21/f-interactive-for-level-design/
 
 open System
@@ -10,6 +11,7 @@ open Microsoft.Xna.Framework.Graphics
 open Microsoft.Xna.Framework.Input
 open Microsoft.Xna.Framework.Storage
 open Microsoft.Xna.Framework.GamerServices
+open System.Threading.Tasks
 
 type Position = float32*float32
 type Color = 
@@ -42,7 +44,7 @@ let renderGrid (spriteBatch:SpriteBatch, colors:Texture2D, grid:Block seq) =
         
 type Game1() as this = 
     inherit Game()
-//    do this.Content.RootDirectory <- __SOURCE_DIRECTORY__ + "\\Content"
+    do this.Content.RootDirectory <- @"D:\code\swapit\SwapIt.Domain.Fs\Content\"
     
     let graphics = new GraphicsDeviceManager(this)
     let mutable spriteBatch = null
@@ -54,7 +56,7 @@ type Game1() as this =
         base.Initialize()
 
     override x.LoadContent() =
-        colors <- x.Content.Load<Texture2D>(@"..\..\..\..\..\..\perso\SwapIt\SwapIt.Domain.Fs\Content\sprites.png")
+        colors <- x.Content.Load<Texture2D>(@"sprites.png")
         spriteBatch <- new SpriteBatch(x.GraphicsDevice)
 
     override x.Update(gameTime) =
@@ -68,8 +70,12 @@ type Game1() as this =
         base.Draw(gameTime)
 
 let game = new Game1()
-game.OnDraw <- fun(sb,colors) -> ()
+//game.OnDraw <- fun(sb,colors) -> ()
 do game.Run()
 
+Task.Run( fun () -> game.Run() )
 
 
+
+Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
+System.IO.Directory.SetCurrentDirectory(__SOURCE_DIRECTORY__)
