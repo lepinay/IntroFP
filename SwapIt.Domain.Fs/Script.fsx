@@ -56,7 +56,7 @@ let renderGrid (g:Graphics, grid:Block seq) =
     let size = 14
     g.Clear(Color.Black)
     for ((x,y),color) in grid do
-        g.DrawImage(image,x*30,y*30,Rectangle(697, 616, size, size),GraphicsUnit.Pixel)
+        g.DrawImage(image,x*14,y*14,Rectangle(697, 616, size, size),GraphicsUnit.Pixel)
 
 //let win = new Window()
 //let canvas = new MyCanvas()
