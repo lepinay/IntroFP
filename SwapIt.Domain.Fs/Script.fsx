@@ -2,6 +2,7 @@
 #r "PresentationCore"
 #r "PresentationFramework"
 #r "System.Xaml"
+#r "UiAutomationTypes"
 open System
 open System.Windows
 open System.Windows.Media
@@ -13,8 +14,12 @@ open System.Collections.Generic
 open System.Threading.Tasks
 open System.Threading
 open System.Windows.Media.Imaging
+open System.Globalization
 
-type Position = float32*float32
+open System.Windows.Forms 
+open System.Drawing
+
+type Position = int*int
 type Color = 
     | Red
     | Green
@@ -28,83 +33,57 @@ let generateGrid width height : Block seq =
         for x in 0..width do 
             for y in 0..height do 
                 let color = match random.Next(3) with| 0 -> Red | 1 -> Green | 2 ->Blue | _ -> failwith "impossible"        
-                yield ((float32(x),float32(y)),color)
+                yield ((x,y),color)
             }
 
 
-type MyCanvas() =
-    inherit Canvas()
-    override x.OnRender ( dc:DrawingContext)  = 
-      let img = new BitmapImage (new Uri (@"C:\perso\SwapIt\SwapIt.Domain.Fs\Content\sprites.png"));
-      dc.DrawImage (img, new Rect (float(0), float(0), float(img.PixelWidth), float(img.PixelHeight)))
-
-let renderGrid (canvas:Canvas, grid:Block seq) =
-    let image = BitmapImage(Uri(@"C:\perso\SwapIt\SwapIt.Domain.Fs\Content\sprites.png"))
-    let size = 14
-    for ((x,y),color) in grid do
-        let rect = 
-            match color with
-                | _ -> Rectangle(697, 616, size, size);
-        spriteBatch.Draw(colors, new Vector2(x * 15.0f, y * 15.0f), Nullable(rect), Microsoft.Xna.Framework.Color.White);
-        canvas.
-
-let win = new Window()
-let canvas = new MyCanvas()
-canvas.Background <- Brushes.White
-win.Content <- canvas
-win.Show()        
-
-//type Game1() as this = 
-//    inherit Game()
-//    do this.Content.RootDirectory <- @"Content"
+//type MyCanvas() =
+//    inherit Canvas()
+//    let mutable renderer = (fun dc -> ())
+//
+//    member x.SetRenderer f = 
+//        renderer <- f
 //    
-//    let graphics = new GraphicsDeviceManager(this)
-//    let mutable spriteBatch = null
-//    let mutable colors = null
+//    member val render:DrawingContext -> unit = 
+//        (fun dc -> ()) with get, set
 //
-//    member val OnDraw = (fun(sb,colors) -> ()) with get, set
+//    override x.OnRender ( dc:DrawingContext)  = 
+//        base.OnRender(dc)
+//        renderer dc
+
+let renderGrid (g:Graphics, grid:Block seq) =
+    let image = new Bitmap(__SOURCE_DIRECTORY__ + @"\Content\sprites.png")
+    let size = 14
+    g.Clear(Color.Black)
+    for ((x,y),color) in grid do
+        g.DrawImage(image,x*30,y*30,Rectangle(697, 616, size, size),GraphicsUnit.Pixel)
+
+//let win = new Window()
+//let canvas = new MyCanvas()
+//let img = new BitmapImage (new Uri (@"D:\code\swapit\SwapIt.Domain.Fs\Content\sprites.png"));
+//let img2 = new Image()
+//img2.Source <- img
+//canvas.Children.Add(img2)
+//canvas.SetRenderer ( fun (dc:DrawingContext) ->
+//        let img = new BitmapImage (new Uri (@"D:\code\swapit\SwapIt.Domain.Fs\Content\sprites.png"));
+//        dc.DrawImage (img, new Rect (float(0), float(0), float(img.PixelWidth), float(img.PixelHeight)))
+//    )
 //
-//    override x.Initialize() =
-//        base.Initialize()
-//
-//    override x.LoadContent() =
-//        colors <- x.Content.Load<Texture2D>(@"sprites")
-//        spriteBatch <- new SpriteBatch(x.GraphicsDevice)
-//
-//    override x.Update(gameTime) =
-//        if (GamePad.GetState(PlayerIndex.One).Buttons.Back = ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) then
-//            x.Exit()
-//        base.Update(gameTime)
-//
-//    override x.Draw(gameTime) =
-//        x.GraphicsDevice.Clear(Color.Gray)
-//        x.OnDraw(spriteBatch,colors)
-//        base.Draw(gameTime)
-//
-//let grid = generateGrid 10 10
-//let game = new Game1()
-//game.OnDraw <- fun(sb,colors) -> renderGrid(sb,colors,grid)
-//game.OnDraw <- fun(sb,colors) -> ()
-//
-//do game.Run()
-//
-//printfn "Thread is now %A" System.Threading.Thread.CurrentThread.ManagedThreadId
-//let syncContext = System.Threading.SynchronizationContext.Current
-//async {
-//    do! Async. SwitchToContext(syncContext)
-//    printfn "Thread is now %A" System.Threading.Thread.CurrentThread.ManagedThreadId
-//    game.Run()
-//} |> Async.Start
-//
-//let start() = 
-//    let game = new Game1()
-//    game.Run()
-//let thread = Thread start
-//thread.IsBackground <- true
-//thread.SetApartmentState ApartmentState.STA
-//thread.Start()
-//
-//Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
-//Environment.SetEnvironmentVariable("Path",
-//    Environment.GetEnvironmentVariable("Path") + ";" + __SOURCE_DIRECTORY__)
-//System.IO.Directory.SetCurrentDirectory(__SOURCE_DIRECTORY__)
+//canvas.Background <- Brushes.Red
+//win.Content <- canvas
+//win.Show()        
+
+let form = new Form() 
+form.Width  <- 600 
+form.Height <- 600 
+form.Visible <- true  
+let panel = new Panel() 
+panel.Dock <- DockStyle.Fill
+panel.BackColor <- Color.White
+form.Controls.Add(panel)     
+let graphics = panel.CreateGraphics()
+let grid = generateGrid 10 10
+renderGrid (graphics, grid)
+let image = new Bitmap(__SOURCE_DIRECTORY__ + @"\Content\sprites.png")
+graphics.Clear(Color.Black)
+graphics.DrawImage(image, 0,0)
