@@ -44,7 +44,16 @@ let rec test(graphics, state:Grid) =
     async {
         let state' = render graphics state
         do! Async.Sleep(30)
+
+        // Tail recursive call, state is stored in stack
+        // How to avoid huge state in stack ?
+        // What not to do: Put all state in one big struct !
+        //  Will cause too much copying of data in stack between mutations
+        //  If one small bit of data change -> copy everything
+        // Instead Use lists (Lists are optimized for updates): one list for each aspect (like SQL Tables) and mutate the lists
+        // The state is now only references to these lists
         do! test(graphics,state')
     }
+// This is going to be scheduled on the same thread ! thanks to synchronisation context magic
 test(graphics,grid) |> Async.Start
 render <- renderFrame
