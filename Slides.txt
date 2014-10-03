@@ -1,0 +1,29 @@
+FP 
+	Like spreadsheets
+		Each cells contains formulas that depend on other cells
+		Cells do not contain things like "print blab la"
+		Cells are pure
+
+	Variables
+		In imperative language they are location, "x" can change wherever in scope
+		In FP they are constant values, "x" is the same forever wherever in scope
+
+	First class function / High Order functions
+		Functions as parameters (Ex filters, predicates)
+		Functions as return values (Ex Factories)
+
+	Side effects
+		Calling a function that does other than returning a result
+		
+		Why no side effect is good
+			Easier to understand
+				Just look at the interface: you can see in and out, no hidden dependencies like global state
+			Easier to test
+				No setup state of the world
+				No mocks
+				No test like "if shouldnt change that"
+			Easier for parallel code
+				No worries about locking
+
+	POO: Easy to add new DataTypes, Hard To add New Behaviour (You have to go over all your types and implement)
+	FP: Easy to add new behaviour on Types, Hard to add new Types (Have to create new functions )
