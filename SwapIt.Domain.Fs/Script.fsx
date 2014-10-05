@@ -20,11 +20,14 @@ let generateGrid width height : Grid =
             }
 
 let image = new Bitmap(__SOURCE_DIRECTORY__ + @"\Content\sprites.png")
+let buffer = new Bitmap(600,600)
+let gbuffer = Graphics.FromImage(buffer)
 let renderGrid (g:Graphics, grid:Grid) =
     let size = 14
-    g.Clear(Color.Black)
+    gbuffer.Clear(Color.Black)
     for ((x,y),color) in grid do
-        g.DrawImage(image,x*14,y*14,Rectangle(697, 616, size, size),GraphicsUnit.Pixel)
+        gbuffer.DrawImage(image,x*14,y*14,Rectangle(697, 616, size, size),GraphicsUnit.Pixel)
+    g.DrawImage(buffer,0,0)
 
 let form = new Form(Width=600,Height=600,Visible=true,TopMost=true)
 let panel = new Panel(Dock=DockStyle.Fill,BackColor=Color.White) 
@@ -39,6 +42,7 @@ let grid = generateGrid 10 10
 let renderFrame g grid = 
     renderGrid (graphics, grid)
     grid
+
 
 let rec test(graphics, state:Grid) = 
     async {
@@ -57,3 +61,4 @@ let rec test(graphics, state:Grid) =
 // This is going to be scheduled on the same thread ! thanks to synchronisation context magic
 test(graphics,grid) |> Async.Start
 render <- renderFrame
+
