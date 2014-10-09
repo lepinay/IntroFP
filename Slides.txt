@@ -1,3 +1,57 @@
+On OOP
+Encapsulation
+Inheritance
+Polymorphism
+
+Alan kay
+OOP to me means only messaging, local retention and protection and hiding of state-process, and extreme late-binding of all things
+I’m sorry that I long ago coined the term “objects” for this topic because it gets many people to focus on the lesser idea. The big idea is “messaging” … The key in making great and growable systems is much more to design how its modules communicate rather than what their internal properties and behaviors should be
+
+On mutability
+http://pivotallabs.com/all-evidence-points-to-oop-being-bullshit/
+State is not your friend, state is your enemy. Changes to state make programs harder to reason about, harder to test and harder to debug. Stateful programs are harder to parallelize, and this is important in a world moving towards more units, more cores and more work. OOP languages encourage mutability, non determinism and complexity.
+As someone who was initially hostile to the idea that state is the root of all problems, I initially greeted this idea with skepticism. Mutating state is so easy and fundamental in OOP that you often overlook how often it happens. If you’re invoking a method on an object that’s not a getter, you’re probably mutating state.
+...
+OOP programs that exhibit low coupling, cohesion and good reusability sometimes feel like nebulous constellations, with hundreds of tiny objects all interacting with each other. Sacrificing readability for changeability. Many of OOP best practices are in fact encouraged by functional programming languages.
+
+http://whiley.org/2010/06/23/rich-hickey-on-clojure-se-radio/
+Even if you don’t have concurrency, I think that large objected-oriented programs struggle with increasing complexity as you build this large object graph of mutable objects. You know, trying to understand and keep in your mind what will happen when you call a method and what will the side-effects be.
+
+http://harmful.cat-v.org/software/OO_programming/why_oo_sucks
+Since functions and data structures are completely different types of animal it is fundamentally incorrect to lock them up in the same cage.
+
+
+Strong Ideas on FP
+Michael Feathers (Working Effectively with Legacy Code): OO makes code understandable by encapsulating moving parts.  FP makes code understandable by minimizing moving parts.
+
+001 Hello World
+C#:Already more clutter
+F#:This actually compiles and runs like that
+
+002 Basic Types
+C#: You can specify types or use type inference too.
+F#: No types needed; No semi colons
+
+003 Lists
+C#: oneToFive need to be a new list, using Linq is cheating here
+F#: 
+	Square brackets create a list with
+	:: (cons) creates list with new 1st element
+	@ concats two lists
+
+004 Functions
+C#: 
+	Functions must live in a class
+	OOP adds unecessary cluter
+F#: 
+	Function are *First Class* (declared as variables, passed around)
+	No Parens for delcaring and running
+
+
+XXX FizzBuzz
+The "Fizz-Buzz test" is an interview question designed to help filter out the 99.5% of programming job candidates who can't seem to program their way out of a wet paper bag. The text of the programming assignment is as follows:
+"Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”."
+
 FP 
 	Like spreadsheets
 		Each cells contains formulas that depend on other cells
