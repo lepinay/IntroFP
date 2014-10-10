@@ -47,6 +47,15 @@ F#:
 	Function are *First Class* (declared as variables, passed around)
 	No Parens for delcaring and running
 
+005 Functions
+F#: Notice we don't use (2,3) this mean someting else 
+
+006: We discover that Linq is FP
+C#: 
+	This is the implementation Pre-Linq
+	Linq introduced FP concepts into C#
+	C# new features are often inspired by F#: Linq, Async, Tuples, Primary constructors
+F#: This is the basic way of doing in it (similar to Linq)
 
 XXX FizzBuzz
 The "Fizz-Buzz test" is an interview question designed to help filter out the 99.5% of programming job candidates who can't seem to program their way out of a wet paper bag. The text of the programming assignment is as follows:

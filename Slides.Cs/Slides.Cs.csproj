@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="007.Encapsulation.cs" />
+    <Compile Include="006.Encapsulation.cs" />
+    <Compile Include="005.Functions.Two Parameters.cs" />
     <Compile Include="XXX.FizzBuzz.cs" />
     <Compile Include="004.Functions.cs" />
     <Compile Include="003.Lists.cs" />

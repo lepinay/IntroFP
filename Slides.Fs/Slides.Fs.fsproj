@@ -45,8 +45,11 @@
     <None Include="001.HelloWorld.fsx" />
     <None Include="002.BasicTypes.fsx" />
     <None Include="003.Lists.fsx" />
+    <None Include="007.Encapsulation.fsx" />
     <None Include="XXX.FizzBuzz.fsx" />
     <None Include="004.Functions.fsx" />
+    <None Include="005.Functions.Two Parameters.fsx" />
+    <None Include="006.Encapsulation.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
