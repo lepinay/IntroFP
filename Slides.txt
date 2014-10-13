@@ -55,11 +55,86 @@ C#:
 	This is the implementation Pre-Linq
 	Linq introduced FP concepts into C#
 	C# new features are often inspired by F#: Linq, Async, Tuples, Primary constructors
-F#: This is the basic way of doing in it (similar to Linq)
+	*ENCAPSULATION* is done using private class methods
+F#: 
+	This is the basic way of doing in it (similar to Linq)
+	*ENCAPSULATION* is done using nested functions
+		Remember the recently discovered "Module" pattern in javascript ? (requirejs)
+
+007: If Then Else
+C#: 
+F#:
+	No return statement, in F# everything is an expression that must evaluate to something.	
+	Since we use pure function a LOT writing "return" would be cumbersome
+	returning value is the norm
+
+008: Piping
+C#:
+	This is a really imperative version
+		You need to deal with the i counter
+		You need to deal with the update of sum
+		The logic of what we are trying to achieve is mixed with book keeping
+F#: 
+	|> is called the pipe "operator" (similar to unix pipes)
+	Get rid of all side effects => more concise code
+		No curlies, no semi colons
+	We can see the data flow
+	*TYPE INFERENCE*: 
+		No type declaration
+		F# type inference > C#: No need in function decl and lambdas (Func,Action)
+
+	Notice how the function is on one line (In C# it would be bad!)
+
+009: Sorting (Non optimized)
+If the list is empty, there is nothing to do.
+Otherwise: 
+  1. Take the first element of the list
+  2. Find all elements in the rest of the list that 
+      are less than the first element, and sort them. 
+  3. Find all elements in the rest of the list that 
+      are >= than the first element, and sort them
+  4. Combine the three parts together to get the final result: 
+      (sorted smaller elements + firstElement + 
+       sorted larger elements)
+C#:
+	Lots of noise (Algorithm is lost in details)
+	Version really imperative (How to do it)
+F#:
+	No Types, will work on all lists
+	rec for recursive
+	*PATTERN MATCHING* (Go trought the code)
+	This version match the algorithm, more declarative (what to do)
+
+	Less Bugs thanks to Pattern Matching
+	Pattern matching forces us to handle the empty list case
+
+010: Web page download
+C#: 
+	Really noisy, notice all the Func stuff
+	all using on top (Old c style)
+	Generics add noise, notice TResult
+F#:
+	We specify Create(Uri) to help the compiler with overrides
+	Notice we don't write new Uri, just Uri'
+	we use 'use' for disposable resources, more readable than c#
+	Again no type declaration => less noise, to the point
+
+011: Web Page Download (usage)
+C#:
+F#:
+	Currying
+	First class string interpolation
+	
 
 XXX FizzBuzz
 The "Fizz-Buzz test" is an interview question designed to help filter out the 99.5% of programming job candidates who can't seem to program their way out of a wet paper bag. The text of the programming assignment is as follows:
 "Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”."
+
+
+XXX: DataScience
+	1. Acquire Data (F# Data providers FTW)
+	2. Explore
+	3. Analyse and loop
 
 FP 
 	Like spreadsheets

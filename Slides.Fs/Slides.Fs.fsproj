@@ -46,10 +46,16 @@
     <None Include="002.BasicTypes.fsx" />
     <None Include="003.Lists.fsx" />
     <None Include="007.Encapsulation.fsx" />
+    <None Include="011.WebPageDownload.fsx" />
     <None Include="XXX.FizzBuzz.fsx" />
     <None Include="004.Functions.fsx" />
     <None Include="005.Functions.Two Parameters.fsx" />
     <None Include="006.Encapsulation.fsx" />
+    <None Include="007.IfThenElse.fsx" />
+    <None Include="008.Piping.fsx" />
+    <None Include="009.Sorting.fsx" />
+    <None Include="009.Sorting2.fsx" />
+    <None Include="010.WebPageDownload.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

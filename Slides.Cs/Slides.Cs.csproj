@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="007.Encapsulation.cs" />
+    <Compile Include="007.IfThenElse.cs" />
+    <Compile Include="011.WebPageDownload.cs" />
+    <Compile Include="010.WebPageDownload.cs" />
+    <Compile Include="009.Sorting2.cs" />
+    <Compile Include="009.Sorting.cs" />
+    <Compile Include="008.Piping.cs" />
     <Compile Include="006.Encapsulation.cs" />
     <Compile Include="005.Functions.Two Parameters.cs" />
     <Compile Include="XXX.FizzBuzz.cs" />
