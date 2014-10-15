@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PrettyPrinting</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,6 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="007.IfThenElse.cs" />
+    <Compile Include="015.Equality.cs" />
+    <Compile Include="014.Pretty Printing.cs" />
+    <Compile Include="013.Complex Types.cs" />
+    <Compile Include="012.Types Hierachies.cs" />
+    <Compile Include="008.StatementVersusExpressions.cs" />
     <Compile Include="011.WebPageDownload.cs" />
     <Compile Include="010.WebPageDownload.cs" />
     <Compile Include="009.Sorting2.cs" />

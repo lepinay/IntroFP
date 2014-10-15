@@ -37,6 +37,8 @@ class WebPageDownloadTest
         var downloader = new WebPageDownloader();
         var google = downloader.FetchUrl("http://www.google.com",
                                           myCallback);
+    var yahoo = downloader.FetchUrl("http://www.yahoo.com",
+                                  myCallback);
 
         // test with a list of sites
         var sites = new List<string> {

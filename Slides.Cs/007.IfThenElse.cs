@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-public class Piping
+public class IfThenElse
 {
 
     private static string checkSign(int p)

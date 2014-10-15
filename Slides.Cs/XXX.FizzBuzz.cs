@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class HelloWorld
+public class FizzBuzz
 {
 
     public static void Main()

@@ -46,7 +46,7 @@
     <None Include="002.BasicTypes.fsx" />
     <None Include="003.Lists.fsx" />
     <None Include="007.Encapsulation.fsx" />
-    <None Include="011.WebPageDownload.fsx" />
+    <None Include="015.Equality.fsx" />
     <None Include="XXX.FizzBuzz.fsx" />
     <None Include="004.Functions.fsx" />
     <None Include="005.Functions.Two Parameters.fsx" />
@@ -56,6 +56,11 @@
     <None Include="009.Sorting.fsx" />
     <None Include="009.Sorting2.fsx" />
     <None Include="010.WebPageDownload.fsx" />
+    <None Include="011.WebPageDownload.fsx" />
+    <None Include="012.Types Hierarchies.fsx" />
+    <None Include="012.Types Hierarchies Aliases.fsx" />
+    <None Include="013.Complex Types.fsx" />
+    <None Include="014.Pretty printing.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

@@ -1,3 +1,44 @@
+Introduction example
+let a = 1
+a = 2
+a ?
+
+Objective
+We want to
+	Deliver faster
+	Deliver correct software
+
+Solution
+	Raise our level of abstraction
+	ASM -> C -> GC Languages -> FP
+
+About the introduction
+	Examples in C#/F#
+	General principles
+	C/C++/Java/Scala/Clojure
+
+OOP
+	We build programs using Objects
+	We use Statements
+
+FP
+	We build programs using functions expressions
+	Expressions return values
+	We use composition
+	It's like building a tree (functions that call functions that call functions)
+Vs Imperative
+	We use statements
+	Programs are built by changing a global state
+
+FP History
+	1930s Lambda Calculus, "Programming" using Math
+	1950s Lisp, first FPL influenced by Lambda Calculus with assignment
+	1960s If You See What I Mean, Real implementation of Lambda Calculus (no assigment)
+	1970s Fortran, imperative with high order functions
+	1970s ML, hybrid, PURE FP with assignment, type inference, proof oriented, generics (List<T>)
+	1970-80, David Turner, Lazy Languages
+	1987, Haskell
+
 On OOP
 Encapsulation
 Inheritance
@@ -23,6 +64,14 @@ Since functions and data structures are completely different types of animal it 
 
 Strong Ideas on FP
 Michael Feathers (Working Effectively with Legacy Code): OO makes code understandable by encapsulating moving parts.  FP makes code understandable by minimizing moving parts.
+
+Advantages of immuability
+	You don't need to unit test for certain kind of bug
+		Who never write unit test to check that a function does not do some side effects
+		Some people say (gave up)you should only test for what the function should do not what it shouldn't do
+		Why not then use a language that enforce this and not REALLY worry about it
+
+		
 
 001 Hello World
 C#:Already more clutter
@@ -67,6 +116,18 @@ F#:
 	No return statement, in F# everything is an expression that must evaluate to something.	
 	Since we use pure function a LOT writing "return" would be cumbersome
 	returning value is the norm
+
+008: Statements versus Expressions
+C#: 
+	In an imperative language, we mess around with state to get things done
+	This can lead to bugs
+	This lead to more complexity
+	We chain these to achieve BBOM ?
+F#:
+	In FP we don't mess around with state
+	We use expressions
+	Expression take inputs and return outputs
+	We chain theses to achieve pure work
 
 008: Piping
 C#:
@@ -121,9 +182,73 @@ F#:
 
 011: Web Page Download (usage)
 C#:
+	No type inference on Func !
+	There is a form of repetition in parameters passing (no currying)
 F#:
+	Type inference on functions
 	Currying
 	First class string interpolation
+
+012:Types Hierarchies
+C#:
+	We use polymorphism
+	We could use property initializer to simply the class code 
+		but the initialisation more complicated and less safe
+		I Hate property initializer because the don't guarantee integirty'
+	We use constructors with FEAR
+		We don't know what could happen to our dependencies because of mutuability
+		Our object could enter invalid state
+		We need "stupid" defensive coding
+	Seriously look at all this useless TYPING
+	Notice also how Visal Studio encourages us to write MUTABLE code with get,set
+	Normally to be more Entreprisy you would need to split everything in 6 separated files
+		Because Classes are code + Data they tend to need their own file
+	Easy to plug in a new shape without touching existing code
+		Good for plugin architecture
+	Hard to add a new behaviour (you have to update all concrete types)
+	Behaviour First
+
+F#:
+	We use pattern matching
+	Fits on the screen (Then can fit in your head)
+	You usually don't need several files for your domain'
+	Pattern matching ensure you consider everything
+		So it's nice for static cases like in your domain'
+		Maybe not so nice for dynamic cases like in a plugin architecture
+	Easy to add a new behaviour without touching existing code (just implement a new function with all cases)
+		Good for correctness, the compiler will tell what need to be updated
+	Hard to add a new Shape but SAFE (you have to update all the functions that depend on the type Shape)
+	Data Domain First
+	Component Entity Systems
+
+013: Complex Types
+C#: 
+	Creation of immutable type is recognized as a good thing
+	But it's painfull to do
+F#:
+	In FP immuability is so impotant that it's the default everywhere
+	Creating immutable type is a one liner
+
+014: Pretty printing
+C#: 
+	lots of boring boiler code
+	gets pretty complicated the more your object have field
+F#:
+	Nothing to do !
+
+015: Equality
+C#: 
+	Seriously look at all this boiler code
+	How confident are you that this will work ?
+	Imagine to do that for dozen of classes 
+	No wonder C# dev are not encouraged to write immutable code
+	We shouldn't be paid to write that kind of code'
+	More importantly we are loosing forest for the trees
+	I remeber feeling smart when I used to write that kind of code
+
+
+
+
 	
 
 XXX FizzBuzz

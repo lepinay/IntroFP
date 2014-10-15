@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-public class BasicTypes
+public class Encapsulation
 {
 
     public static IEnumerable<int> Evens(IEnumerable<int> list)

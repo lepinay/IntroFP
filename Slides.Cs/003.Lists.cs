@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-public class BasicTypes
+public class Lists
 {
     public static void Main()
     {

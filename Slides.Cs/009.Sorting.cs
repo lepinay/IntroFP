@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class QuickSortHelper
+public class Sorting
 {
     public static List<T> QuickSort<T>(List<T> values)
        where T : IComparable
