@@ -19,9 +19,10 @@ About the introduction
 
 OOP
 	We build programs using Objects
-	We use Statements
+	We use imperative Statements (Change this, change that)
 
 FP
+	It's a style of programming'
 	We build programs using functions expressions
 	Expressions return values
 	We use composition
@@ -277,7 +278,7 @@ C#:
 
 
 
-
+XXX Active Patterns
 
 
 

@@ -46,7 +46,7 @@
     <None Include="002.BasicTypes.fsx" />
     <None Include="003.Lists.fsx" />
     <None Include="007.Encapsulation.fsx" />
-    <None Include="020.Strategy Design Pattern.fsx" />
+    <None Include="XXX.Fun.fsx" />
     <None Include="XXX.FizzBuzz.fsx" />
     <None Include="004.Functions.fsx" />
     <None Include="005.Functions.Two Parameters.fsx" />
@@ -65,6 +65,8 @@
     <None Include="016.Comparison.fsx" />
     <None Include="017.Decorator Design Pattern.fsx" />
     <None Include="018-019.Generic Timer.fsx" />
+    <None Include="020.Strategy Design Pattern.fsx" />
+    <None Include="worldbank.json" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
