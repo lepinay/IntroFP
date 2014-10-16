@@ -237,6 +237,10 @@ F#:
 	Nothing to do !
 
 015: Equality
+C#: This is getting ugly
+F#: Surprise nothing to do
+
+016: Comparison
 C#: 
 	Seriously look at all this boiler code
 	How confident are you that this will work ?
@@ -245,6 +249,34 @@ C#:
 	We shouldn't be paid to write that kind of code'
 	More importantly we are loosing forest for the trees
 	I remeber feeling smart when I used to write that kind of code
+F#:
+	Nothing to do, fields are compared structuraly in order
+
+017: Decorator Design Pattern
+Design Pattern: 
+"general reusable solution to a commonly occurring problem within a given context in software design" - Wikipedia
+ Peter Norvig demonstrates that 16 out of the 23 patterns in the Design Patterns book (that is primarily focused on C++) are simplified or eliminated (via direct language support) in Lisp
+ C#:
+	A basic calculator
+	We want to add loging so we wrap the calculator using the Decorator Pattern
+F#:
+	Because functions are first class
+	we can pass them as parameters
+	Composition is clean and easy
+	Notice that our logger can be reused in place of calculator (same interface)
+
+01-019: Generic logger + Generic Timer with logging
+F#:
+	Actually any funcition that math the "inteface" can be passed
+	so we can have a generic logger on any thing that is a'->b'
+	This really help in creativity and composition
+	We have far better composibility since we don't really depend on an static interface
+C#: 
+	We can do the same in term of composition of adapters but we are stuck with ICalculator
+	The only way to do that in C# is using a functional style (delegate)
+
+
+
 
 
 

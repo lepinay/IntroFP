@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="007.IfThenElse.cs" />
+    <Compile Include="017.Decorator Design Pattern.cs" />
+    <Compile Include="020.Strategy Design Pattern.cs" />
+    <Compile Include="018-019.Decorator Design Pattern.cs" />
+    <Compile Include="016.Comparison.cs" />
     <Compile Include="015.Equality.cs" />
     <Compile Include="014.Pretty Printing.cs" />
     <Compile Include="013.Complex Types.cs" />
