@@ -46,6 +46,9 @@
   <ItemGroup>
     <Compile Include="007.IfThenElse.cs" />
     <Compile Include="017.Decorator Design Pattern.cs" />
+    <Compile Include="022.Maybe.cs" />
+    <Compile Include="XXX.Maybe.cs" />
+    <Compile Include="021.Maybe.cs" />
     <Compile Include="020.Strategy Design Pattern.cs" />
     <Compile Include="018-019.Decorator Design Pattern.cs" />
     <Compile Include="016.Comparison.cs" />
