@@ -35,5 +35,7 @@ class Maybe
             }
         }
 
+        //person?.PersonDetail?.PhoneNumber?.Home?.ToUpper();
+
     }
 }

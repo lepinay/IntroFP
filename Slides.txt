@@ -1,3 +1,19 @@
+Slide
+	"F#"
+	"Open Source"::
+	"Run on mono"::
+	"Testimonies"
+
+F#
+	Open Source
+	Runs on mono (First Class Support)
+	Testimonies
+
+Links
+	fsharp.org
+	tryfsharp.org
+	fsharpforfunandprofit.com (check)
+
 Introduction example
 let a = 1
 a = 2
@@ -30,6 +46,27 @@ FP
 Vs Imperative
 	We use statements
 	Programs are built by changing a global state
+
+FP Advantages
+	Conciseness. 
+		No coding "noise" such as curly brackets, semicolons and so on. 
+		Type inference You almost never have to specify the type of an object, 
+		It generally takes less lines of code to solve the same problem.
+	Convenience. 
+		Creating and using complex type definitions
+		List processing, comparison and equality, state machines...
+		Easy to create powerful and reusable code by creating functions 
+		that have other functions as parameters, or that combine existing functions to create new functionality.
+	Correctness. 
+		Powerful type system which prevents many common errors 
+		such as null reference exceptions. 
+		You can often encode business logic using the type system itself, 
+		so that it is actually impossible to write incorrect code, 
+		because it is caught at compile time as a type error.
+		Concurrency.
+	Multiparadigm.
+		Easy to interop with .NET OO languages
+		
 
 FP History
 	1930s Lambda Calculus, "Programming" using Math
@@ -275,6 +312,35 @@ F#:
 C#: 
 	We can do the same in term of composition of adapters but we are stuck with ICalculator
 	The only way to do that in C# is using a functional style (delegate)
+
+020: Designing with types
+F#: 
+	Business says: "User have at least mail or postal"
+	V1 is wrong because we require all field present
+	V2 we mark both as optional, but now we can have invalid users with neither mail or postal
+	In C# we would need to inforce this rule with code
+	In F# we can inforce using types
+		A contact only has an email address
+		A contact only has a postal address
+		A contact has both a email address and a postal address
+	V3 we model this using a discriminated union
+		The forth case is now impossible in our code (both mail and postal empty)
+	* Now when we deal with contact info we are safe guarded by the type system:
+		Pattern matching guides us by forcing us to handle all possible case scenario
+	* We managed to implement a complex business rules in a few lines
+		This thing can be reviewed easily
+		If we change it it will break at compilation
+	* Correctness and robustness
+	* C# we would probably need a class hierarchy and polymorphism
+	V4 if the business want to handle phones we would need
+		to have 15 cases !
+		We SMELL something bad => Refactoring
+	* F# is really good for that kind of refactoring
+		Since your domain can fit in screen, you are more
+		Tempted to that kind of refactoring compared to OO
+		+ The type system really helps you
+
+
 
 
 

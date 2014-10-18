@@ -6,9 +6,44 @@ DateTime.Now.ToString "yyyy-MM-dd HH:mm"
 Environment.GetEnvironmentVariable "ProgramFiles" = 
     Environment.GetEnvironmentVariable "PROGRAMFILES"
 
-// Explore Web Services
+// Forms
+open System.Windows.Forms 
+open System.Drawing
+
+let form = new Form(Width= 400, Height = 300, Visible = true, Text = "Hello World") 
+form.TopMost <- true
+form.Click.Add (fun _ -> 
+    form.Text <- sprintf "form clicked at %i" DateTime.Now.Ticks)
+form.Show()
+
+let panel = new FlowLayoutPanel()
+form.Controls.Add(panel)
+panel.Dock <- DockStyle.Fill
+panel.WrapContents <- true 
+panel.BackColor <- Color.Red
+
+let greenButton = new Button()
+greenButton.Text <- "Make the background color green" 
+greenButton.Click.Add (fun _-> form.BackColor <- Color.LightGreen)
+panel.Controls.Add(greenButton) 
+
+greenButton.AutoSize <- true
+
+let yellowButton = new Button()
+yellowButton.Text <- "Make me yellow" 
+yellowButton.AutoSize <- true
+yellowButton.Click.Add (fun _-> form.BackColor <- Color.Yellow)
+panel.Controls.Add(yellowButton) 
+
+panel.FlowDirection <- FlowDirection.TopDown
+
+yellowButton.Dock <- DockStyle.Fill
+
+
+
 #r @"..\packages\FSharp.Data.2.0.15\lib\net40\FSharp.Data.dll"
 open FSharp.Data
+// Explore Web Services
 //#region secret key
 let apiKey = "3266f4f3608a03d134d5dff59a3c1bf9"
 //#endregion
@@ -17,7 +52,32 @@ Http.RequestString
     query   = [ "api_key", apiKey; "query", "batman" ],
     headers = [ "Accept", "application/json" ])
 
+type MovieResult = JsonProvider<"""{"page":1,"results":[{"adult":false,"backdrop_path":"/2blmxp2pr4BhwQr74AdCfwgfMOb.jpg","id":268,"original_title":"Batman","release_date":"1989-06-22","poster_path":"/u782c0lom0YlLwSWX0X2o72OJDT.jpg","popularity":1.42,"title":"Batman","vote_average":6.6,"vote_count":536},{"adult":false,"backdrop_path":"/tVLnQf6AvWKz8yRpoOnfTu0kht4.jpg","id":186579,"original_title":"Batman Tech","release_date":"2008-07-20","poster_path":"/1k0ep5h934ddQKvfVQe4gY9NhGj.jpg","popularity":0.0125739148465572,"title":"Batman Tech","vote_average":0.0,"vote_count":0}],"total_pages":3,"total_results":60}""">
+let res = 
+    Http.RequestString
+      ( "http://api.themoviedb.org/3/search/movie", httpMethod = "GET",
+        query   = [ "api_key", apiKey; "query", "batman" ],
+        headers = [ "Accept", "application/json" ])
+    |> MovieResult.Parse
+res.Results 
+    |> Array.sortBy(fun r -> -r.VoteAverage) 
+    |> Array.map(fun r -> (r.Title,r.VoteAverage,r.VoteCount))
+let res2 = query {
+    for r in res.Results do
+    sortBy -r.VoteAverage
+    select (r.Title,r.VoteAverage,r.VoteCount, r.PosterPath)
+} 
 
+let addImage label url = 
+    let pb = new PictureBox()
+    pb.ImageLocation <- "https://image.tmdb.org/t/p/w92/"+url
+    let lbl = new Label()
+    lbl.Text <- label
+    panel.Controls.Add lbl
+    panel.Controls.Add(pb)
+
+for (title,vote,count,poster) in res2 do 
+    addImage title poster
 
 // Explore Data using type providers
 open FSharp.Data
@@ -136,5 +196,7 @@ Chart.Bar([("one", 33); ("two", 5); ("three", 74); ("four", 101)])
 Chart.Column([("one", 33); ("two", 5); ("three", 74); ("four", 101)])
             .WithLegend()
 
+// example CSV, XML
+// Hadoop, Odata (netflix), wsdl
 
     

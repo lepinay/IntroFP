@@ -4,3 +4,5 @@
 |> Seq.map square
 |> Seq.sum
 
+
+
