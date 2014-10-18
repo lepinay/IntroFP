@@ -8,6 +8,15 @@ F#
 	Open Source
 	Runs on mono (First Class Support)
 	Testimonies
+		High Productivity
+			Code base divided by 2,4,10
+		High Performance
+			Thanks to //
+		Business Critical Code
+			Thanks to Domain Modeling Correctness
+	Industries
+		Finance, Gaming Industry
+			For Gaming John Carmack
 
 Links
 	fsharp.org
