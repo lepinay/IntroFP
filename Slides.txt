@@ -474,7 +474,7 @@ F#:
 	Composition is clean and easy
 	Notice that our logger can be reused in place of calculator (same interface)
 
-01-019: Generic logger + Generic Timer with logging
+018-019: Generic logger + Generic Timer with logging
 F#:
 	Actually any funcition that math the "inteface" can be passed
 	so we can have a generic logger on any thing that is a'->b'

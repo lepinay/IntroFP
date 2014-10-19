@@ -47,10 +47,6 @@
     <None Include="003.Lists.fsx" />
     <None Include="007.Encapsulation.fsx" />
     <None Include="024.TypeDesign.fsx" />
-    <None Include="XXX.Fun.fsx" />
-    <None Include="XXX.FizzBuzz.fsx" />
-    <None Include="XXX.Maybe.fsx" />
-    <None Include="XXX.Maybe2.fsx" />
     <None Include="004.Functions.fsx" />
     <None Include="005.Functions.Two Parameters.fsx" />
     <None Include="006.Encapsulation.fsx" />
@@ -71,8 +67,12 @@
     <None Include="020.Strategy Design Pattern.fsx" />
     <None Include="021.Maybe.fsx" />
     <None Include="022.Maybe.fsx" />
-    <None Include="worldbank.json" />
     <None Include="023.Logging.fsx" />
+    <None Include="XXX.Fun.fsx" />
+    <None Include="XXX.Maybe.fsx" />
+    <None Include="XXX.Maybe2.fsx" />
+    <None Include="XXX.FizzBuzz.fsx" />
+    <None Include="worldbank.json" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
