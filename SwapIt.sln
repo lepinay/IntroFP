@@ -13,6 +13,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SwapIt.Domain.Fs", "SwapIt.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{666A992E-D646-4F35-BE87-F2CFE881FD2B}"
 	ProjectSection(SolutionItems) = preProject
+		General Notes.txt = General Notes.txt
 		..\..\Users\U6017748\Documents\Visual Studio 2013\Projects\MaybeMonad.fsx = ..\..\Users\U6017748\Documents\Visual Studio 2013\Projects\MaybeMonad.fsx
 		MaybeMonad2.fsx = MaybeMonad2.fsx
 		Slides.fsx = Slides.fsx

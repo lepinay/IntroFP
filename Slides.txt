@@ -1,8 +1,157 @@
-Slide
-	"F#"
-	"Open Source"::
-	"Run on mono"::
-	"Testimonies"
+Introduction to FP with F#
+
+Introduction
+	a = 1
+	a = 3
+	a ?
+
+Introduction
+	I'm U6017748
+	AAA Team, 8th floor
+	Feel free to ask questions
+
+Objective
+	Make you rethink about the way we work
+	Compare two paradigm OOP Vs FP
+
+Be aware
+	We are using F#
+		Just a tool
+		Could be Scala, Clojure, Haskell...
+	All FP languages share the same
+		Vocabulary
+		Principles
+	Like comparing C#/Java
+		OOP principles are the same
+
+About me
+	Used to work in Video Games
+	Programming in C
+	State Machines, Real Time
+	I like simple software that does complex things
+	I hate complicated software that does simple things
+		=> That's where we are most of the time
+
+What I miss
+	Code simplicity
+	Data + Code
+	Game software is really complex
+	But yet is so easy to reason about your code
+	
+What I do now 
+	Entreprise programming
+		C++,C#,Java,OOP.
+		Lots of "complexity"
+			Design Patterns, IoC, SOLID,
+			Threads, locks, mocks...
+		It's the norm
+	But should it ?
+
+What is OOP ?
+	Polymorphism
+	Inheritance
+	Encapsulation
+
+What is OOP ?	
+
+	Alan kay (OOP, SmallTalk, Dynabook)
+	OOP to me means only *messaging*, 
+	*local retention and protection and 
+	hiding of state-process*, 
+	and extreme late-binding of all things
+
+	I’m sorry that I long ago coined the term “objects” 
+	for this topic because it gets many people to focus on the lesser idea. 
+	The big idea is “messaging” … 
+	The key in making great and growable systems is much more 
+	to design how its modules communicate rather 
+	than what their internal properties and behaviors 
+	
+What is OOP ?
+	Alan Kay has a background in Biology
+	He viewed "Objects" has cells communicating by sending messages
+	Cells don't know anything about internals of other cells
+		No Getters / No Setters
+		No Properties
+	Objects communicate like we do
+		When I communicate with you
+			I don't send my internal organs to you
+			No I just "serialize" only what you need
+				In sounds or gestures
+			Then you receive
+				We receive a lot of different information
+			You process Internally the message
+			And Change you internal State
+			And Send Back Other messages
+		That's real OOP
+	I think it's a really beautiful idea
+	That's how our body work internally
+	And we know our body is certainly the most complex system
+	(go have a look to inside a cell videos)
+	
+What is OOP ?
+	SmallTalk got it right
+	Erlang and Actor Model Got it Right
+
+What Happened ?
+	Industry got it wrong
+	Marketing
+	Silver bullet
+	
+	That's what's happening with Agile today
+	Haskell's motto is "Avoid success at all costs!"		
+
+Mutuability, the devil
+
+	http://pivotallabs.com/all-evidence-points-to-oop-being-bullshit/
+	State is not your friend, state is your enemy. 
+	Changes to state make programs 
+		harder to reason about, 
+		harder to test and harder to debug. 
+	Stateful programs are harder to parallelize, 
+		and this is important in a world moving towards 
+			more units, more cores and more work. 
+	OOP languages encourage 
+		mutability, 
+		non determinism and complexity.
+
+	As someone who was initially hostile to the idea that 
+		state is the root of all problems, 
+	I initially greeted this idea with skepticism. 
+	Mutating state is so easy and fundamental in OOP 
+		that you often overlook how often it happens. 
+	If you’re invoking a method on an object 
+		that’s not a getter, you’re probably mutating state.
+
+	OOP programs that exhibit 
+		low coupling, cohesion and good reusability 
+		sometimes feel like nebulous constellations, 
+		with hundreds of tiny objects all interacting 
+		with each other. 
+		
+	Sacrificing readability for changeability. 
+	
+	Many of OOP best practices are in fact encouraged 
+	by functional programming languages.
+
+	http://whiley.org/2010/06/23/rich-hickey-on-clojure-se-radio/
+	Even if you don’t have concurrency, 
+	I think that large objected-oriented programs 
+		struggle with increasing complexity 
+			as you build this large object graph of mutable objects. 
+			You know, trying to understand and keep in your mind 
+			what will happen when you call a method 
+			and what will the side-effects be.
+
+	=> The more you manipulate State
+	=> The more you increase complexity
+	=> Your brain will need to act as a VM
+		To keep track of all the state moving around
+
+	http://harmful.cat-v.org/software/OO_programming/why_oo_sucks
+	Since functions and data structures 
+	are completely different types of animal 
+	it is fundamentally incorrect to lock them up in the same cage.
 
 F#
 	Open Source
@@ -12,21 +161,38 @@ F#
 			Code base divided by 2,4,10
 		High Performance
 			Thanks to //
-		Business Critical Code
+		Correctness/Safety
+			Business Critical Code
 			Thanks to Domain Modeling Correctness
+			No null references
+		Safety
+		Conciseness
+			Readable And Reasonable
+		Interactive Programming
+			Louvre Abu Dhabi
 	Industries
-		Finance, Gaming Industry
+		Finance, Energy, AI, Gaming Industry
 			For Gaming John Carmack
+
+FP Vocabulary
+	Purity
+		Pure Language
+		Pure Function
+	High Order Function
+	Immuability
+	First Class Functions
+		Declared as var, param, return value
+	Monads
+	Currying
+	Pattern matching
+	Referential transparency
+	Recursion/Tail Recursion
+	Lists comprehension
 
 Links
 	fsharp.org
 	tryfsharp.org
 	fsharpforfunandprofit.com (check)
-
-Introduction example
-let a = 1
-a = 2
-a ?
 
 Objective
 We want to
@@ -35,12 +201,7 @@ We want to
 
 Solution
 	Raise our level of abstraction
-	ASM -> C -> GC Languages -> FP
-
-About the introduction
-	Examples in C#/F#
-	General principles
-	C/C++/Java/Scala/Clojure
+	Binary code -> ASM -> C -> GC Languages -> FP
 
 OOP
 	We build programs using Objects
@@ -77,7 +238,7 @@ FP Advantages
 		Easy to interop with .NET OO languages
 		
 
-FP History
+FP, the old new thing ?
 	1930s Lambda Calculus, "Programming" using Math
 	1950s Lisp, first FPL influenced by Lambda Calculus with assignment
 	1960s If You See What I Mean, Real implementation of Lambda Calculus (no assigment)
@@ -86,37 +247,38 @@ FP History
 	1970-80, David Turner, Lazy Languages
 	1987, Haskell
 
-On OOP
-Encapsulation
-Inheritance
-Polymorphism
+FP, why so much recent interest
+	Moore's law
+		1. "Power" (memory,clock speed...) double every 18 month
+		2. #Transistors in CPU doubles every 2 years
 
-Alan kay
-OOP to me means only messaging, local retention and protection and hiding of state-process, and extreme late-binding of all things
-I’m sorry that I long ago coined the term “objects” for this topic because it gets many people to focus on the lesser idea. The big idea is “messaging” … The key in making great and growable systems is much more to design how its modules communicate rather than what their internal properties and behaviors should be
-
-On mutability
-http://pivotallabs.com/all-evidence-points-to-oop-being-bullshit/
-State is not your friend, state is your enemy. Changes to state make programs harder to reason about, harder to test and harder to debug. Stateful programs are harder to parallelize, and this is important in a world moving towards more units, more cores and more work. OOP languages encourage mutability, non determinism and complexity.
-As someone who was initially hostile to the idea that state is the root of all problems, I initially greeted this idea with skepticism. Mutating state is so easy and fundamental in OOP that you often overlook how often it happens. If you’re invoking a method on an object that’s not a getter, you’re probably mutating state.
-...
-OOP programs that exhibit low coupling, cohesion and good reusability sometimes feel like nebulous constellations, with hundreds of tiny objects all interacting with each other. Sacrificing readability for changeability. Many of OOP best practices are in fact encouraged by functional programming languages.
-
-http://whiley.org/2010/06/23/rich-hickey-on-clojure-se-radio/
-Even if you don’t have concurrency, I think that large objected-oriented programs struggle with increasing complexity as you build this large object graph of mutable objects. You know, trying to understand and keep in your mind what will happen when you call a method and what will the side-effects be.
-
-http://harmful.cat-v.org/software/OO_programming/why_oo_sucks
-Since functions and data structures are completely different types of animal it is fundamentally incorrect to lock them up in the same cage.
+		1. True until 2004
+			We got easily life
+		2. Still true thanks to cores
+	Who's gonna help
+	We need an easily parallelisable language
 
 
 Strong Ideas on FP
-Michael Feathers (Working Effectively with Legacy Code): OO makes code understandable by encapsulating moving parts.  FP makes code understandable by minimizing moving parts.
+Michael Feathers (Working Effectively with Legacy Code): 
+	OO makes code understandable 
+		by encapsulating moving parts.  
+	FP makes code understandable 
+		by minimizing moving parts.
 
 Advantages of immuability
 	You don't need to unit test for certain kind of bug
 		Who never write unit test to check that a function does not do some side effects
 		Some people say (gave up)you should only test for what the function should do not what it shouldn't do
 		Why not then use a language that enforce this and not REALLY worry about it
+	Easier to parallelize things
+		Order of execution is less important
+	Less Bugs
+		Try to swap to independent function calls
+	Less Spagetti code
+		Dependencies are explicit
+	Easier to optmize
+		Duplicated data can be  share safely
 
 		
 
