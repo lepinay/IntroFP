@@ -20,7 +20,6 @@ let panel = new FlowLayoutPanel()
 form.Controls.Add(panel)
 panel.Dock <- DockStyle.Fill
 panel.WrapContents <- true 
-panel.BackColor <- Color.Red
 
 let greenButton = new Button()
 greenButton.Text <- "Make the background color green" 
@@ -59,6 +58,7 @@ let res =
         query   = [ "api_key", apiKey; "query", "batman" ],
         headers = [ "Accept", "application/json" ])
     |> MovieResult.Parse
+
 res.Results 
     |> Array.sortBy(fun r -> -r.VoteAverage) 
     |> Array.map(fun r -> (r.Title,r.VoteAverage,r.VoteCount))

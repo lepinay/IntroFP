@@ -52,6 +52,7 @@
             <section>
                 <h1>Introduction to Functional Programming</h1>
                 <h3>By comparing FP to OOP</h3>
+                <h4>Using F#/C#</h4>
                 <p>
                     <small>By U6017748</small>
                 </p>
@@ -76,8 +77,10 @@ a ??
 
             <section>
                 <h2>My goal today</h2>
-                <p>Make you rethink about the way we work</p>
-                <p>Compare two paradigm OOP Vs FP</p>
+                <p>Quick intro on FP and OOP</p>
+                <p>F#/C# basics</p>
+                <p>F#/C# more advanced examples</p>
+                <p>F# Fun stuff unique to F#</p>
             </section>
 
             <section>
@@ -88,8 +91,9 @@ a ??
                 <p>All FP languages share the same core values</p>
                 <!--Vocabulary-->
                 <!--Principles-->
-                <p>Like comparing C#/Java</p>
+                <p>Like teaching OO C#,Java doesn't matter</p>
                 <!--OOP principles are the same-->
+                <p>Wide subject, bits and pieces</p>
             </section>
 
             <section>
@@ -98,7 +102,7 @@ a ??
                 <p> Programming in C</p>
                 <p>State Machines, Real Time</p>
                 <p>I like simple software that does complex things</p>
-                <p>I hate complicated software that does simple things</p>
+                <p>I dislike complicated software that does simple things</p>
                 <!--=> That's where we are most of the time-->
             </section>
 
@@ -116,6 +120,8 @@ a ??
                 <p>C++,C#,Java,OOP.</p>
                 <p>Lots of "complexity"</p>
                 <p>Design Patterns, IoC, SOLID,</p>
+                <p>Factories, Abstract Factories, Adapters</p>
+                <p>Decorators</p>
                 <p>Threads, locks, mocks...</p>
                 <p>It's the norm</p>
                 <p>But should it ?</p>
@@ -269,6 +275,33 @@ a ??
                 </blockquote>
             </section>
             <section>
+                <h2>Encapsulating moving parts</h2>
+                <img src="img/encapsulation.png" />
+                <p>Internal state is protected</p>
+                <p>Mutation is still there</p>
+            </section>
+            <section>
+                <h2>Minimizing moving parts</h2>
+                <img src="img/minimisation.png" />
+                <p>Core doesn't contain mutating code</p>
+                <p>Outer layer handle mutations</p>
+                <p>What does it remind you of ?</p>
+            </section>
+            <section>
+                <h2>Garbage Collection</h2>
+                <img src="img/gc.png" />
+                <p>Dandling pointers bugs</p>
+                <p>Double free bugs</p>
+                <p>Memory leaks bugs</p>
+            </section>
+            <section>
+                <h2>Minimizing moving parts</h2>
+                <img src="img/minimisation.png" />
+                <p>Dead locks bugs</p>
+                <p>State mutation bugs</p>
+                <p>Spaghetti code</p>
+            </section>
+            <section>
                 <h2>FP, the old new thing</h2>
                 <p>1930s Lambda Calculus, "Programming" using Math</p>
                 <p>1950s Lisp, first FPL influenced by Lambda Calculus with assignment</p>
@@ -282,7 +315,8 @@ a ??
                 <section>
                     <h2>So why the regain in interest</h2>
                     <p>Moore's law</p>
-                    <img src="CPU-Scaling.jpg" width="50%" />
+                    <img src="img/CPU-Scaling.jpg" width="50%" />
+
                 </section>
                 <section>
                     <ol>
@@ -303,22 +337,33 @@ a ??
                 <p>Since VS 2005 !</p>
 
             </section>
-            <section tagcloud>
-                High Productivity
-                Smaller Code base
-                High Performance
-                Correctness
-                Safety
-                Business Critical
-                Domain Modeling
-                Conciseness
-                Readable
-                Reasonable
-                Finance
-                Energy
-                AI
-                Gaming Industry
-                <!--Louvre Abu Dhabi, John Carmak-->
+            <section>
+                <section tagcloud>
+                    High Productivity
+                    Smaller Code base
+                    High Performance
+                    Correctness
+                    Safety
+                    Business Critical
+                    Domain Modeling
+                    Conciseness
+                    Readable
+                    Reasonable
+                    Finance
+                    Energy
+                    AI
+                    Gaming Industry
+                    <!--Louvre Abu Dhabi, John Carmak-->
+                </section>
+                <section>
+                    <h2>Louvre Abu Dhabi</h2>
+                    <img src="img/dome design.jpg" />
+                </section>
+                <section>
+                    <h2>Quake 3 And FP</h2>
+                    <img src="img/quake.jpg" />
+                </section>
+
             </section>
             <section>
                 <h2>Links</h2>

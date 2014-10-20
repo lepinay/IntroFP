@@ -113,6 +113,11 @@
     <Content Include="reveal.js\css\theme\sky.css" />
     <Content Include="reveal.js\css\theme\solarized.css" />
     <Content Include="reveal.js\Gruntfile.js" />
+    <Content Include="reveal.js\img\CPU-Scaling.jpg" />
+    <Content Include="reveal.js\img\dome design.jpg" />
+    <Content Include="reveal.js\img\encapsulation.png" />
+    <Content Include="reveal.js\img\GC.png" />
+    <Content Include="reveal.js\img\minimisation.png" />
     <Content Include="reveal.js\plugin\tagcloud\tagcloud.js" />
     <Content Include="reveal.js\template.html" />
     <Content Include="reveal.js\index.html" />
