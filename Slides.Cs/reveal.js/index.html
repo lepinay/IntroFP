@@ -51,6 +51,7 @@
         <div class="slides">
             <section>
                 <h1>Introduction to Functional Programming</h1>
+                <h5>V 0.2</h5>
                 <h3>By comparing FP to OOP</h3>
                 <h4>Using F#/C#</h4>
                 <p>
@@ -61,26 +62,43 @@
                 </p>
             </section>
 
-            <section>
+            <!--<section>
                 <h2>Small Quizz</h2>
                 <pre><code data-trim contenteditable>
 a = 1
 a = 2
 a ??
 					</code></pre>
-            </section>
+            </section>-->
             <section>
                 <h2>Introduction</h2>
                 <p>A.A.A Team, 8th floor</p>
                 <p>Feel free to ask questions</p>
             </section>
+            <section>
+                <h2>FP in short</h2>
+                Pure Language
+                Pure Functions
+                Recursion
+                Tail Recursion
+                List Comprehensions
+                Referential Transparency
+                <strong>High&nbsp;Order&nbsp;Functions</strong>
+                Immutability
+                <strong>Interactive programming</strong>
+                <strong>First Class Functions</strong>
+                Monads
+                Currying
+                Partial Functions
+                Pattern Matching
+            </section>
 
             <section>
                 <h2>My goal today</h2>
-                <p>Quick intro on FP and OOP</p>
-                <p>F#/C# basics</p>
-                <p>F#/C# more advanced examples</p>
-                <p>F# Fun stuff unique to F#</p>
+                <p><strong>High Order Functions</strong></p>
+                <p><strong>First Class Functions</strong></p>
+                <p>in both F# and C#</p>
+                <p>Some F# unique fun stuff</p>
             </section>
 
             <section>
@@ -96,25 +114,24 @@ a ??
                 <p>Wide subject, bits and pieces</p>
             </section>
 
-            <section>
+            <!--<section>
                 <h2>A little bit more about me</h2>
                 <p>Used to work in Video Games</p>
                 <p> Programming in C</p>
                 <p>State Machines, Real Time</p>
                 <p>I like simple software that does complex things</p>
                 <p>I dislike complicated software that does simple things</p>
-                <!--=> That's where we are most of the time-->
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>What I miss the most</h2>
                 <p>Code simplicity</p>
                 <p>Data + Code</p>
                 <p>Game software is really complex</p>
                 <p>But yet is so easy to reason about your code</p>
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>What I do now</h2>
                 <p>Entreprise programming</p>
                 <p>C++,C#,Java,OOP.</p>
@@ -125,18 +142,18 @@ a ??
                 <p>Threads, locks, mocks...</p>
                 <p>It's the norm</p>
                 <p>But should it ?</p>
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>what is oop?</h2>
                 <ol>
                     <li class="fragment"><p>Polymorphism</p></li>
                     <li class="fragment"><p>Inheritance</p></li>
                     <li class="fragment"><p>Encapsulation</p></li>
                 </ol>
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>what is oop?</h2>
                 <blockquote>
                     &ldquo;OOP to me means only <strong>messaging</strong>,
@@ -153,6 +170,7 @@ a ??
                     to design how its modules communicate rather
                     than what their internal properties and behaviors &rdquo; - Alan Kay
                 </blockquote>
+            </section>-->
                 <!--What is OOP ?
                 Alan Kay has a background in Biology
                 He viewed "Objects" has cells communicating by sending messages
@@ -174,32 +192,31 @@ a ??
                 That's how our body work internally
                 And we know our body is certainly the most complex system
                 (go have a look to inside a cell videos)-->
-            </section>
 
-            <section>
+            <!--<section>
                 <h2>What is "real" OOP ?</h2>
                 <p>SmallTalk</p>
                 <p>Erlang Actor Model</p>
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>What happened ?</h2>
                 <p>Industry got it wrong</p>
                 <p>Marketing</p>
                 <p>Silver bullet</p>
                 <p>That's what's happening with Agile today</p>
                 <p>Haskell's motto is "Avoid success at all costs!"</p>
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>Ok How do we fix this ?</h2>
                 <p>Design Patterns</p>
                 <p>SOLID</p>
                 <p>Program against an Interface</p>
                 <p>Composition over inheritance</p>
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>What do we end up with ?</h2>
                 <blockquote>
                     &ldquo;OOP programs that exhibit
@@ -214,9 +231,9 @@ a ??
                     by functional programming languages.&rdquo;
 
                 </blockquote>
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>Mutability and OOP</h2>
                 <blockquote cite="http://pivotallabs.com/all-evidence-points-to-oop-being-bullshit/">
                     &ldquo;As someone who was initially hostile to the idea that
@@ -229,9 +246,9 @@ a ??
                         that’s not a getter, you’re probably mutating state.
                     </strong>&rdquo;
                 </blockquote>
-            </section>
+            </section>-->
 
-            <section>
+            <!--<section>
                 <h2>Mutability and OOP</h2>
                 <blockquote cite="http://pivotallabs.com/all-evidence-points-to-oop-being-bullshit/">
                     &ldquo;State is not your friend, state is your enemy.
@@ -247,62 +264,10 @@ a ??
                         non determinism and complexity
                     </strong>.&rdquo;
                 </blockquote>
-            </section>
-
-
+            </section>-->
 
             <section>
-                <h2>Mutability and OOP</h2>
-                <blockquote cite="http://whiley.org/2010/06/23/rich-hickey-on-clojure-se-radio/">
-                    &ldquo;Even if you don’t have concurrency,
-                    I think that large objected-oriented programs
-                    <strong>struggle</strong> with <strong>increasing complexity</strong>
-                    as you build this large object graph of mutable objects.
-                    You know, <strong>trying to understand and keep in your mind</strong>
-                    what will happen when you call a method
-                    and what will the side-effects be.&rdquo;-Richard Hickey
-                </blockquote>
-                <!--=> The more you manipulate State
-                => The more you increase complexity
-                => Your brain will need to act as a VM
-                    To keep track of all the state moving around-->
-            </section>
-            <section>
-                <h2>So how does FP solves this</h2>
-                <blockquote>
-                    &ldquo;OO makes code understandable by <strong>encapsulating moving parts</strong>.
-                    FP makes code understandable by <strong>minimizing moving parts</strong>.&rdquo;- Michael Feathers
-                </blockquote>
-            </section>
-            <section>
-                <h2>Encapsulating moving parts</h2>
-                <img src="img/encapsulation.png" />
-                <p>Internal state is protected</p>
-                <p>Mutation is still there</p>
-            </section>
-            <section>
-                <h2>Minimizing moving parts</h2>
-                <img src="img/minimisation.png" />
-                <p>Core doesn't contain mutating code</p>
-                <p>Outer layer handle mutations</p>
-                <p>What does it remind you of ?</p>
-            </section>
-            <section>
-                <h2>Garbage Collection</h2>
-                <img src="img/gc.png" />
-                <p>Dandling pointers bugs</p>
-                <p>Double free bugs</p>
-                <p>Memory leaks bugs</p>
-            </section>
-            <section>
-                <h2>Minimizing moving parts</h2>
-                <img src="img/minimisation.png" />
-                <p>Dead locks bugs</p>
-                <p>State mutation bugs</p>
-                <p>Spaghetti code</p>
-            </section>
-            <section>
-                <h2>FP, the old new thing</h2>
+                <h2>FP, the old new thing ?</h2>
                 <p>1930s Lambda Calculus, "Programming" using Math</p>
                 <p>1950s Lisp, first FPL influenced by Lambda Calculus with assignment</p>
                 <p>1960s If You See What I Mean, Real implementation of Lambda Calculus (no assigment)</p>
@@ -313,7 +278,7 @@ a ??
             </section>
             <section>
                 <section>
-                    <h2>So why the regain in interest</h2>
+                    <h2>So why should I care ?</h2>
                     <p>Moore's law</p>
                     <img src="img/CPU-Scaling.jpg" width="50%" />
 
@@ -364,6 +329,54 @@ a ??
                     <img src="img/quake.jpg" />
                 </section>
 
+            </section>
+
+
+            <!--<section>
+                <h2>Mutability and OOP</h2>
+                <blockquote cite="http://whiley.org/2010/06/23/rich-hickey-on-clojure-se-radio/">
+                    &ldquo;Even if you don’t have concurrency,
+                    I think that large objected-oriented programs
+                    <strong>struggle</strong> with <strong>increasing complexity</strong>
+                    as you build this large object graph of mutable objects.
+                    You know, <strong>trying to understand and keep in your mind</strong>
+                    what will happen when you call a method
+                    and what will the side-effects be.&rdquo;-Richard Hickey
+                </blockquote>
+            </section>-->
+            <section>
+                <h2>So how does FP solves this</h2>
+                <blockquote>
+                    &ldquo;OO makes code understandable by <strong>encapsulating moving parts</strong>.
+                    FP makes code understandable by <strong>minimizing moving parts</strong>.&rdquo;- Michael Feathers
+                </blockquote>
+            </section>
+            <section>
+                <h2>Encapsulating moving parts</h2>
+                <img src="img/encapsulation.png" />
+                <p>Internal state is protected</p>
+                <p>Mutation is still there</p>
+            </section>
+            <section>
+                <h2>Minimizing moving parts</h2>
+                <img src="img/minimisation.png" />
+                <p>Core doesn't contain mutating code</p>
+                <p>Outer layer handle mutations</p>
+                <p>What does it remind you of ?</p>
+            </section>
+            <section>
+                <h2>Garbage Collection</h2>
+                <img src="img/gc.png" />
+                <p>Dandling pointers bugs</p>
+                <p>Double free bugs</p>
+                <p>Memory leaks bugs</p>
+            </section>
+            <section>
+                <h2>Minimizing moving parts</h2>
+                <img src="img/minimisation.png" />
+                <p>Dead locks bugs</p>
+                <p>State mutation bugs</p>
+                <p>Spaghetti code</p>
             </section>
             <section>
                 <h2>Links</h2>
