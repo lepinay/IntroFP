@@ -6,4 +6,4 @@ let fetchUrl callback url =
     use resp = req.GetResponse() 
     use stream = resp.GetResponseStream() 
     use reader = new IO.StreamReader(stream) 
-    callback reader url
+    callback url reader

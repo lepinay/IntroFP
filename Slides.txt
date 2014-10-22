@@ -560,3 +560,6 @@ FP
 
 	POO: Easy to add new DataTypes, Hard To add New Behaviour (You have to go over all your types and implement)
 	FP: Easy to add new behaviour on Types, Hard to add new Types (Have to create new functions )
+
+	**
+	Features copied from FP to OO, @27:19: https://www.youtube.com/watch?v=gx28Umd7ELA&list=PLtRG9GLtNcHBv4cuh2w1cz5VsgY6adoc3#t=1639

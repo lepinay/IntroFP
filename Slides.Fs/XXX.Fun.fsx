@@ -59,6 +59,7 @@ let res =
         headers = [ "Accept", "application/json" ])
     |> MovieResult.Parse
 
+
 res.Results 
     |> Array.sortBy(fun r -> -r.VoteAverage) 
     |> Array.map(fun r -> (r.Title,r.VoteAverage,r.VoteCount))
@@ -103,6 +104,10 @@ let someStarDistances =
             where e.Distance.HasValue
             select (e.Name, e.Distance) } 
       |> Seq.toList
+
+
+let a = 1
+a = 2
 
 /// Get the stars in the database sorted by proximity to earth
 let starsSortedByProximityToEarth = 
