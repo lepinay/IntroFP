@@ -25,7 +25,7 @@ class Maybe2
     {
         public T Get<T>(T defaultValue)
         {
-            if (this is Some<T>) return (this as Some<T>).T;
+            if (this is Some<T>) return (this as Some<T>).Value;
             else return defaultValue;
         }
     }
@@ -37,11 +37,11 @@ class Maybe2
 
     class Some<T> : Maybe<T>
     {
-        public T T { get; set; }
+        public T Value { get; set; }
 
         public Some(T t)
         {
-            this.T = t;
+            this.Value = t;
         }
     }
 
@@ -50,11 +50,11 @@ class Maybe2
 
     }
 
-    public static Maybe Check<T>(Maybe<T> t, Func<T, Maybe> cexpr)
+    static Maybe Check<T>(Maybe<T> t, Func<T, Maybe> cexpr)
     {
         if (t is Some<T>)
         {
-            return cexpr((t as Some<T>).T);
+            return cexpr((t as Some<T>).Value);
         }
         else return new None();
     }
