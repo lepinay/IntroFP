@@ -4,12 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{666A992E-D646-4F35-BE87-F2CFE881FD2B}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Users\U6017748\Documents\Visual Studio 2013\Projects\MaybeMonad.fsx = ..\..\Users\U6017748\Documents\Visual Studio 2013\Projects\MaybeMonad.fsx
-		MaybeMonad2.fsx = MaybeMonad2.fsx
-		Slides.txt = Slides.txt
-		StateMonad.fsx = StateMonad.fsx
-	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Slides.Fs", "Slides.Fs\Slides.Fs.fsproj", "{D6D981D4-0268-48AF-9156-0A92FFC97BE8}"
 EndProject
